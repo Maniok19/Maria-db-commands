@@ -1,0 +1,55 @@
+﻿-- SQL commands to create a MariaDB database and tables
+
+
+-- Create a new database
+
+
+CREATE DATABASE IF NOT EXISTS SampleDB;
+
+
+-- Use the newly created database
+
+
+USE SampleDB;
+
+
+
+
+-- Create a sample table 'Users'
+
+
+CREATE TABLE IF NOT EXISTS Users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- Create a sample table 'Products'
+
+
+CREATE TABLE IF NOT EXISTS Products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- Insert sample data into 'Users'
+
+
+INSERT INTO Users (username, email, password) VALUES
+('Alice', 'alice@example.com', 'password123'),
+('Bob', 'bob@example.com', 'password456');
+
+
+-- Insert sample data into 'Products'
+
+
+INSERT INTO Products (name, description, price) VALUES
+('Laptop', 'High performance laptop', 999.99),
+('Smartphone', 'Latest model smartphone', 599.99);
